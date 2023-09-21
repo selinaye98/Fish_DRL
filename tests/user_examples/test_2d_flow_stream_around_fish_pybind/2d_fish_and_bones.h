@@ -23,7 +23,7 @@ class SphFishBodyBones
 		return y;
 	}
 
-	std::vector<Vecd> CreatFishShape(Real center_x, Real center_y, Real length, Real resolution)
+	std::vector<Vecd> CreateFishShape(Real center_x, Real center_y, Real length, Real resolution)
 	{
 		Real headtip = center_x;		//head position(cx, cy)
 		Real tailtip = center_x + length;	//tail position(cx + length, cy)

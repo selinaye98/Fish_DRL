@@ -209,6 +209,13 @@ class SphFishSimulation : public SphFishEnvironment
         return fish_position_probe.getCurrentPositionY(18);
     }
     //----------------------------------------------------------------------
+    //	head velocity for python environment.
+    //----------------------------------------------------------------------
+    Real getFishHeadVelocityX()
+    {
+        return fish_velocity_probe.getCurrentVelocityX(0);
+    }
+    //----------------------------------------------------------------------
     //	observation for python environment.
     //----------------------------------------------------------------------
     Real getPressurePoint1()
@@ -411,6 +418,7 @@ PYBIND11_MODULE(test_2d_flow_stream_around_fish_pybind, m)
         .def("SetFreq", &SphFishSimulation::setFreqfromPython)
         .def("GetFishHeadPositionX", &SphFishSimulation::getFishHeadPositionX)
         .def("GetFishHeadPositionY", &SphFishSimulation::getFishHeadPositionY)
+        .def("GetFishHeadVelocityX", &SphFishSimulation::getFishHeadVelocityX)
         .def("GetPressurePoint1", &SphFishSimulation::getPressurePoint1)
         .def("GetPressurePoint2", &SphFishSimulation::getPressurePoint2)
         .def("GetPressurePoint3", &SphFishSimulation::getPressurePoint3)
