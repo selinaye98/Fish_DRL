@@ -110,6 +110,11 @@ class ObservedQuantityRecording : public BodyStatesRecording,
 		{
 			  return (*this->interpolated_quantities_)[point_number][1];
 		}
+
+    Real getCurrentVelocityX(int point_number)
+    {
+        return (*this->interpolated_quantities_)[point_number][0];
+    }
 };
 
 /**
