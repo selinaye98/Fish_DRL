@@ -134,7 +134,7 @@ class FishBody : public MultiPolygonShape, public SphBasicGeometrySetting
   public:
     explicit FishBody(const std::string &shape_name) : MultiPolygonShape(shape_name)
     {
-        std::vector<Vecd> fish_shape = CreatFishShape(cx, cy, fish_length, fish_shape_resolution);
+        std::vector<Vecd> fish_shape = CreateFishShape(cx, cy, fish_length, fish_shape_resolution);
         multi_polygon_.addAPolygon(fish_shape, ShapeBooleanOps::add);
     }
 };
@@ -150,7 +150,7 @@ class WaterBlock : public ComplexShape, public SphBasicGeometrySetting
         /** Geometry definition. */
         MultiPolygon outer_boundary(createWaterBlockShape());
         add<MultiPolygonShape>(outer_boundary, "OuterBoundary");
-        MultiPolygon fish(CreatFishShape(cx, cy, fish_length, fish_shape_resolution));
+        MultiPolygon fish(CreateFishShape(cx, cy, fish_length, fish_shape_resolution));
         subtract<MultiPolygonShape>(fish);
     }
 };
